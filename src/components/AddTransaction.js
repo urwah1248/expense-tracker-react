@@ -15,7 +15,7 @@ const buttonStyle = {
   color: "White",
   fontSize : "20px"
 }
-const AddTransaction = ({backend, setList, list, income, setIncome, expense, setExpense, setBalance}) => {
+const AddTransaction = ({ setList, list, income, setIncome, expense, setExpense, setBalance}) => {
 
   const handleSubmit = e => {
     e.preventDefault();

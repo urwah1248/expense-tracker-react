@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import BalanceTracker from "./components/BalanceTracker";
 import TransactionHistory from "./components/TransactionHistory";
 import AddTransaction from "./components/AddTransaction";
-import TransactionService from "./services/TransactionService"
 import './app.css'
 
 function App() {
@@ -16,13 +15,6 @@ function App() {
   const [inputDetail, setInputDetail] = useState('')
   const [inputAmount, setInputAmount] = useState(0)
 
-  const appStyle = {
-    textAlign : "center",
-    width: "400px",
-    margin: "0 auto"
-  }
-  
-
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
@@ -32,7 +24,7 @@ function App() {
       <TransactionHistory list={list} setList={setList} />
 
       <h2>Add Transaction</h2>
-      <AddTransaction setBalance={setBalance} income={income} setIncome={setIncome} expense={expense} setExpense={setExpense} list={list} setList={setList} backend={TransactionService} detail={inputDetail} setDetail={setInputDetail} amount={inputAmount} setAmount={setInputAmount} />
+      <AddTransaction setBalance={setBalance} income={income} setIncome={setIncome} expense={expense} setExpense={setExpense} list={list} setList={setList} detail={inputDetail} setDetail={setInputDetail} amount={inputAmount} setAmount={setInputAmount} />
 
     </div>
   );
