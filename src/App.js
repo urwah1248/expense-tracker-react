@@ -5,6 +5,7 @@ import BalanceTracker from "./components/BalanceTracker";
 import TransactionHistory from "./components/TransactionHistory";
 import AddTransaction from "./components/AddTransaction";
 import TransactionService from "./services/TransactionService"
+import './app.css'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
   
 
   return (
-    <div className="App" style={appStyle}>
+    <div className="App">
       <h1>Expense Tracker</h1>
 
       <BalanceTracker balance={balance} income={income} expense={expense}/>
