@@ -25,7 +25,7 @@ function App() {
 
       <h2>Add Transaction</h2>
       <AddTransaction setBalance={setBalance} income={income} setIncome={setIncome} expense={expense} setExpense={setExpense} list={list} setList={setList} detail={inputDetail} setDetail={setInputDetail} amount={inputAmount} setAmount={setInputAmount} />
-
+      
     </div>
   );
 }
