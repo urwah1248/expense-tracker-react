@@ -1,0 +1,12 @@
+{
+    "transactions": [
+        {
+            "description" : "acha",
+            "amount" : 20
+        },
+        {
+            "description" : "acha",
+            "amount" : -20
+        }
+    ]
+}

@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+//Importing Components
+import BalanceTracker from "./components/BalanceTracker";
+import TransactionHistory from "./components/TransactionHistory";
+import AddTransaction from "./components/AddTransaction";
+import TransactionService from "./services/TransactionService"
 
 function App() {
+
+  const [balance, setBalance] = useState(0)
+  const [income, setIncome] = useState(0)
+  const [expense, setExpense] = useState(0)
+  const [list, setList] = useState([])
+  const [inputDetail, setInputDetail] = useState('')
+  const [inputAmount, setInputAmount] = useState(0)
+
+  const appStyle = {
+    textAlign : "center",
+    width: "400px",
+    margin: "0 auto"
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={appStyle}>
+      <h1>Expense Tracker</h1>
+
+      <BalanceTracker balance={balance} income={income} expense={expense}/>
+
+      <TransactionHistory list={list} setList={setList} />
+
+      <h2>Add Transaction</h2>
+      <AddTransaction setBalance={setBalance} income={income} setIncome={setIncome} expense={expense} setExpense={setExpense} list={list} setList={setList} backend={TransactionService} detail={inputDetail} setDetail={setInputDetail} amount={inputAmount} setAmount={setInputAmount} />
+
     </div>
   );
 }
